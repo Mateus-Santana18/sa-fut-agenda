@@ -1,4 +1,3 @@
-Aqui está o README para o seu projeto "Fut - Agenda":
 
 ---
 
@@ -6,7 +5,8 @@ Aqui está o README para o seu projeto "Fut - Agenda":
 
 **Fut - Agenda** é um sistema de gerenciamento de partidas de futebol, desenvolvido para facilitar a organização de jogos e o controle de agendamentos de campos. Com ele, campos e administradores podem gerenciar partidas, horários e pagamentos, enquanto usuários e organizadores podem reservar horários, ingressar em partidas e gerenciar seus perfis.
 
-![Fut - Agenda Banner](https://via.placeholder.com/800x300.png?text=Fut+-+Agenda)
+![Fut - Agenda Banner](![borda preta](https://github.com/user-attachments/assets/d0dcc946-d5fd-4a4d-a200-828ac05ab066)
+)
 
 ## Tecnologias Utilizadas 🛠️
 - **Back-end:** Java (Spring Boot)
@@ -104,5 +104,3 @@ Sinta-se à vontade para contribuir com melhorias e novas funcionalidades para o
 Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ---
-
-Essa estrutura de README proporciona clareza e facilita o entendimento do projeto. Você pode personalizar ainda mais incluindo capturas de tela reais ou diagramas do sistema.
