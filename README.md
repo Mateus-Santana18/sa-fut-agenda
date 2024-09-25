@@ -5,7 +5,7 @@
 
 **Fut - Agenda** é um sistema de gerenciamento de partidas de futebol, desenvolvido para facilitar a organização de jogos e o controle de agendamentos de campos. Com ele, campos e administradores podem gerenciar partidas, horários e pagamentos, enquanto usuários e organizadores podem reservar horários, ingressar em partidas e gerenciar seus perfis.
 
-(![borda preta](https://github.com/user-attachments/assets/d0dcc946-d5fd-4a4d-a200-828ac05ab066)
+![borda preta](https://github.com/user-attachments/assets/d0dcc946-d5fd-4a4d-a200-828ac05ab066)
 
 
 ## Tecnologias Utilizadas 🛠️
