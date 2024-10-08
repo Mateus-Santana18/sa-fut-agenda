@@ -1,0 +1,124 @@
+/* Login.css */
+
+*{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+  }
+  
+  .loginCorpo {
+    display: flex;
+    width: 850px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .ladoEsquerdo {
+    width: 62%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #222;
+    /* color: #ffffff; */
+  }
+  
+  .tituloLogin {
+    font-size: 40px;
+  }
+  .txtFacaOLogin{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .labelLogin {
+    margin: 10px 0 5px;
+  }
+  .input{
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid rgb(14, 160, 3);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #222;
+    color: #ffffff;
+    outline: none;
+  }
+
+  .input:focus{
+    border-color: none;
+  }
+
+
+  .botaoDeLogin {
+    margin-top: 40px;
+    width: 150px;
+    height: 40px;
+    background-color: #09a509;
+    color: #ffffff;
+    border: solid 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .parteDeBaixo{
+    display: flex;
+    width: 100%;
+    height: 25%;
+    background-color: #222;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-button:hover {
+    background-color: #00cc00;
+  }
+  
+  .login-right {
+    
+    width: 38%;
+    height: 100%;
+    background-color: #00cc00;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+  }
+  
+  .register-button {
+    width: 180px;
+    height: 50px;
+    background-color: #222;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .register-button:hover{
+    background-color: #00cc00;
+
+  }
+  
+  .txtNaoPossuiCadastro{
+    font-size: 20px;
+  }

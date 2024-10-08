@@ -1,0 +1,103 @@
+/* Login.css */
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+  }
+  
+  .cadastroCorpo {
+    display: flex;
+    width: 850px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .ladoDireito {
+    flex: 1.5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #222;
+    color: #ffffff;
+  }
+  
+  .tituoLogin {
+    margin-bottom: 20px;
+  }
+  
+  .labelLogin {
+    margin: 10px 0 5px;
+  }
+  .input{
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid rgb(14, 160, 3);
+    border: 2Z ;
+    background-color: #222;
+    color: #0a9b0a;
+    outline: 0;
+  }
+  
+
+  .botaoDeCadastrar {
+    padding: 10px;
+    width: 105px;
+    height: 45px;
+    background-color: #09a509;
+    color: #ffffff;
+    border: solid 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+
+  }
+  .parteDeBaixo{
+    display: flex;
+    width: 100%;
+    height: 25%;
+    background-color: #222;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-button:hover {
+    background-color: #00cc00;
+  }
+  
+  .ladoEsquerdo {
+    flex: 1;
+    background-color: #00cc00;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-bottom: 90px;
+  }
+  
+  .logo h2 {
+    margin: 0;
+  }
+  
+  .botaoLogin {
+    padding: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 6;
+    border-radius: 5px;
+    cursor: pointer;
+    border-color: #fff;
+    transition: background-color 0.3s;
+  }
+  
+  .register-button:hover {
+    background-color: #f0f0f0;
+  }
+  
