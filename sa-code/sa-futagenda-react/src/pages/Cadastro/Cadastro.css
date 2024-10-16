@@ -9,13 +9,13 @@
   
   .cadastroCorpo {
     display: flex;
-    width: 850px;
-    height: 500px;
-    border-radius: 15px;
+    width: 950px;
+    height: 650px;
+    border-radius: 8px;
     overflow: hidden;
   }
   
-  .ladoDireito {
+  .ladoDireitoCadastro {
     width: 62%;
     padding: 20px;
     display: flex;
@@ -24,39 +24,51 @@
     background-color: #222;
   }
   
-  .tituoLogin {
-    margin-bottom: 20px;
+  .tituloCadastro {
+    font-size: 45px;
+  }
+
+  .tituloCadastroAlinhar{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
   }
   
-  .labelLogin {
+  .labelCadastro {
     margin: 10px 0 5px;
+    font-size: 25px;
   }
-  .input{
-    width: 100%;
-    padding: 5px;
+  .inputCadastro{
+    width: 98%;
+    /* padding: 5px; */
+    font-size: 15px;
     border-bottom: 1px solid rgb(14, 160, 3);
+    border-top: none;
+    border-left: none;
+    border-right: none;
     border: 2Z ;
     background-color: #222;
-    color: #0a9b0a;
-    outline: 0;
+    color: #FFFFFF;
+    outline: none;
   }
   
 
   .botaoDeCadastrar {
-    padding: 10px;
-    width: 105px;
-    height: 45px;
+    /* padding: 10px; */
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
     background-color: #09a509;
     color: #ffffff;
-    border: solid 2px;
-    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    /* font-weight: bold; */
   }
-  .parteDeBaixo{
+  .parteDeBaixoCadastro{
     display: flex;
     width: 100%;
     height: 25%;
@@ -69,33 +81,35 @@
     background-color: #00cc00;
   }
   
-  .ladoEsquerdo {
+  .ladoEsquerdoCadastro {
     width: 38%;
     height: 100%;
     background-color: #00cc00;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     color: #fff;
   }
   
-  .logo h2 {
+  /* .divLogoCadastro{
     margin: 0;
-  }
+  } */
   
-  .botaoLogin {
-    padding: 10px;
-    background-color: #000000;
+  .botaoLoginCadastro {
+    /* padding: 10px; */
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    background-color: #00cc00;
     color: #ffffff;
-    border: 6;
-    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
     cursor: pointer;
-    border-color: #fff;
     transition: background-color 0.3s;
   }
   
-  .register-button:hover {
-    background-color: #f0f0f0;
+  .botaoLoginCadastro:hover {
+    background-color: #222222;
   }
   

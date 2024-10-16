@@ -1,7 +1,12 @@
-.Logo{
+.Logo {
     width: 200px;
-    height:200px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.logoCadastro {
+    width: 3px;
+    height: 2px;
 }

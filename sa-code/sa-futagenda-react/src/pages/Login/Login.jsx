@@ -26,7 +26,7 @@ const Login = () => {
 
         </div>
         <div className="login-right">
-            <Logo className="logo"/>
+            <Logo />
           <p className='txtNaoPossuiCadastro'>Não possui Cadastro?</p>
           <button className="register-button" >
             Cadastre-se
