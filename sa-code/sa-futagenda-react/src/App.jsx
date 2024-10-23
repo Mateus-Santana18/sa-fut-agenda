@@ -7,8 +7,8 @@ function App() {
 
   return (
     <>
-    <Cadastro />
-    {/* <Login /> */}
+    {/* <Cadastro /> */}
+    <Login />
     </>
   )
 }
