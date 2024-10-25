@@ -1,27 +1,29 @@
 create table usuario (
 	"id" serial primary key,
 	"nome" varchar(40) not null,
-	"email" text not null,
+	"email" text unique not null,
 	"telefone" varchar(20) not null,
 	"senha" varchar(30) not null
 );
 
-create table organizador (
+create table reserva (
 	"id" serial primary key,
-	"id_horario" integer references horario(id),
-	"id_usuario" integer references usuario(id)
-);
-
-create table horario (
-	"id" serial primary key,
-	"dia_e_hora" timestamp  not null,
-	"disponibilidade" varchar not null,
+	"horario_inicio_reserva" timestamp not null,
+	"horario_fim_reserva" timestamp not null,
+	
+--					UM PRA UM
+	"id_quadra" integer references quadra(id),
+	
+--					UM PRA UM
+	"id_organizador" integer references organizador(id)
 );
 
 create table quadra (
 	"id" serial primary key,
 	"tipo" varchar(20) not null,
-	"id_horario" integer references horario(id)
+	
+--	 				MUITOS PRA UM
+	"id_estabelecimento" integer references estabelecimento(id)
 );
 
 create table estabelecimento (
@@ -30,11 +32,16 @@ create table estabelecimento (
 	"cnpj" varchar(16) not null,
 	"horario_abertura" timestamp not null,
 	"horario_encerramento" timestamp not null,
-	"id_usuario" integer references usuario(id),
-	"id_quadra" integer references quadra(id)
+	
+--					UM PRA UM
+	"id_usuario" integer references usuario(id)
 );
 
-create table agendamento (
+create table organizador (
+	"id" serial primary key,
+	
+	--				UM PRA UM
+	"id_usuario" integer references usuario(id)
+);
 
-)
 
