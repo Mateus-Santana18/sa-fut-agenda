@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity(name = "reserva")
 public class ReservaEntity {
@@ -20,5 +22,13 @@ public class ReservaEntity {
 
     @Column(name = "horario_fim_reserva")
     private LocalDateTime horarioFimReserva;
+
+    @OneToOne
+    @JoinColumn(name = "id_quadra")
+    private QuadraEntity quadraEntity;
+
+    @OneToOne
+    @JoinColumn(name = "id_organizador")
+    private OrganizadorEntity organizadorEntity;
     
 }

@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity(name = "quadra")
 public class QuadraEntity {
@@ -15,5 +17,10 @@ public class QuadraEntity {
 
     @Column(name = "tipo")
     private String tipo;
+
+    @ManyToOne
+    @JoinColumn(name = "id_estabelecimento")
+    private EstabelecimentoEntity estabelecimentoEntity;
+    
 
 }

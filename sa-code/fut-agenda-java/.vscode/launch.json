@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FutAgendaApplication<fut-agenda>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "fut.agenda.fut_agenda.FutAgendaApplication",
+            "projectName": "fut-agenda",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
