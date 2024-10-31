@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fut.agenda.fut_agenda.dtos.req.UsuarioDTO;
+
 @RestController
 @RequestMapping("/usuario")
 public class APIController {
 
     @PostMapping
-    public ResponseEntity<?> criarUsuario(RequestBody UsuarioDTO) {
+    public ResponseEntity<?> criarUsuario(@RequestBody UsuarioDTO dto ) {
 
         return ResponseEntity.status(200).build();
     }
