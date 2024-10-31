@@ -10,6 +10,7 @@ public class ReservaDTO {
 
     private QuadraDTO quadraDTO;
     private OrganizadorDTO organizadorDTO;
+    private long id_organizador;
     
     public long getId() {
         return id;

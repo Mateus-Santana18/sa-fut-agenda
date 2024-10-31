@@ -1,7 +1,5 @@
 package fut.agenda.fut_agenda.dtos.res;
 
-
-
 public class ShowOrganizadorDTO {
     private long id;
     private ShowUsuarioDTO showUsuarioDTO;

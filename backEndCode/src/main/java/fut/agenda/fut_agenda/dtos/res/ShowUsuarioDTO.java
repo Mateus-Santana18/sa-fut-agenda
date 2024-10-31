@@ -5,7 +5,7 @@ public class ShowUsuarioDTO {
     private String nome;
     private String email;
     private String telefone;
-    private String senha;
+    
     
     public long getId() {
         return id;
@@ -31,10 +31,5 @@ public class ShowUsuarioDTO {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    public String getSenha() {
-        return senha;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+
 }
