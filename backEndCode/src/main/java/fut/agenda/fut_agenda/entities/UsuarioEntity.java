@@ -65,6 +65,8 @@ public class UsuarioEntity {
         this.senha = senha;
     }
 
+
+
     
     
 }
