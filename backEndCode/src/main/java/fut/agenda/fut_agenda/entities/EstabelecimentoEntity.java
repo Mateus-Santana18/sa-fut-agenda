@@ -37,6 +37,64 @@ public class EstabelecimentoEntity {
 
     @OneToMany
     @JoinColumn(name = "id_quadra")
-    private List<QuadraEntity> quadraList; 
+    private List<QuadraEntity> quadraList;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public LocalDateTime getHorarioAbertura() {
+        return horarioAbertura;
+    }
+
+    public void setHorarioAbertura(LocalDateTime horarioAbertura) {
+        this.horarioAbertura = horarioAbertura;
+    }
+
+    public LocalDateTime getHorarioEncerramento() {
+        return horarioEncerramento;
+    }
+
+    public void setHorarioEncerramento(LocalDateTime horarioEncerramento) {
+        this.horarioEncerramento = horarioEncerramento;
+    }
+
+    public UsuarioEntity getUsuarioEntity() {
+        return usuarioEntity;
+    }
+
+    public void setUsuarioEntity(UsuarioEntity usuarioEntity) {
+        this.usuarioEntity = usuarioEntity;
+    }
+
+    public List<QuadraEntity> getQuadraList() {
+        return quadraList;
+    }
+
+    public void setQuadraList(List<QuadraEntity> quadraList) {
+        this.quadraList = quadraList;
+    } 
+
+    
 
 }
