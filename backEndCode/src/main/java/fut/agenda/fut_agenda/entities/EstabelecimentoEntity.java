@@ -39,6 +39,7 @@ public class EstabelecimentoEntity {
     @JoinColumn(name = "id_quadra")
     private List<QuadraEntity> quadraList;
 
+
     public long getId() {
         return id;
     }

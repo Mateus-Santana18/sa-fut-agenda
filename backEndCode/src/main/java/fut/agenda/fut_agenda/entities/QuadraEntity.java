@@ -46,5 +46,5 @@ public class QuadraEntity {
         this.estabelecimentoEntity = estabelecimentoEntity;
     }
     
-
+    
 }

@@ -34,4 +34,5 @@ public class OrganizadorEntity {
         this.usuarioEntity = usuarioEntity;
     }
 
+    
 }
