@@ -18,4 +18,21 @@ public class OrganizadorEntity {
     @JoinColumn(name = "id_usuario")
     private UsuarioEntity usuarioEntity;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public UsuarioEntity getUsuarioEntity() {
+        return usuarioEntity;
+    }
+
+    public void setUsuarioEntity(UsuarioEntity usuarioEntity) {
+        this.usuarioEntity = usuarioEntity;
+    }
+
+    
 }
