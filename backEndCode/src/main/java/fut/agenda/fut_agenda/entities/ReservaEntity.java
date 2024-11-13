@@ -30,5 +30,46 @@ public class ReservaEntity {
     @OneToOne
     @JoinColumn(name = "id_organizador")
     private OrganizadorEntity organizadorEntity;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getHorarioInicioReserva() {
+        return horarioInicioReserva;
+    }
+
+    public void setHorarioInicioReserva(LocalDateTime horarioInicioReserva) {
+        this.horarioInicioReserva = horarioInicioReserva;
+    }
+
+    public LocalDateTime getHorarioFimReserva() {
+        return horarioFimReserva;
+    }
+
+    public void setHorarioFimReserva(LocalDateTime horarioFimReserva) {
+        this.horarioFimReserva = horarioFimReserva;
+    }
+
+    public QuadraEntity getQuadraEntity() {
+        return quadraEntity;
+    }
+
+    public void setQuadraEntity(QuadraEntity quadraEntity) {
+        this.quadraEntity = quadraEntity;
+    }
+
+    public OrganizadorEntity getOrganizadorEntity() {
+        return organizadorEntity;
+    }
+
+    public void setOrganizadorEntity(OrganizadorEntity organizadorEntity) {
+        this.organizadorEntity = organizadorEntity;
+    }
+    
     
 }

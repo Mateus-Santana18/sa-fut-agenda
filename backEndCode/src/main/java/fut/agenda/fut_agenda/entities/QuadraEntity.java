@@ -21,6 +21,30 @@ public class QuadraEntity {
     @ManyToOne
     @JoinColumn(name = "id_estabelecimento")
     private EstabelecimentoEntity estabelecimentoEntity;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public EstabelecimentoEntity getEstabelecimentoEntity() {
+        return estabelecimentoEntity;
+    }
+
+    public void setEstabelecimentoEntity(EstabelecimentoEntity estabelecimentoEntity) {
+        this.estabelecimentoEntity = estabelecimentoEntity;
+    }
     
 
 }
