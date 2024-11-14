@@ -64,7 +64,8 @@ public class ReservaService {
 
             showReservaDTO.setShowQuadraDTO(showQuadraDTO);
             showReservaDTO.setShowOrganizadorDTO(showOrganizadorDTO);
-            
+            // showReservaDTO.setIdQuadra(reserva.getQuadraEntity().getId());
+            // showReservaDTO.setIdOrganizador(reserva.getOrganizadorEntity().getId());
 
             return showReservaDTO;
 
@@ -95,6 +96,8 @@ public class ReservaService {
 
         dto.setShowQuadraDTO(quadraDTO);
         dto.setShowOrganizadorDTO(organizadorDTO);
+        // dto.setIdOrganizador(reservaEntity.getQuadraEntity().getId());
+        // dto.setIdQuadra(reservaEntity.getOrganizadorEntity().getId());
 
         return dto;
     }

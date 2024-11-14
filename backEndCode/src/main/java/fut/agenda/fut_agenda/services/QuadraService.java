@@ -7,12 +7,9 @@ import org.springframework.stereotype.Service;
 
 import fut.agenda.fut_agenda.dtos.req.QuadraDTO;
 import fut.agenda.fut_agenda.dtos.res.ShowEstabelecimentoDTO;
-import fut.agenda.fut_agenda.dtos.res.ShowOrganizadorDTO;
 import fut.agenda.fut_agenda.dtos.res.ShowQuadraDTO;
-import fut.agenda.fut_agenda.dtos.res.ShowReservaDTO;
 import fut.agenda.fut_agenda.entities.EstabelecimentoEntity;
 import fut.agenda.fut_agenda.entities.QuadraEntity;
-import fut.agenda.fut_agenda.entities.ReservaEntity;
 import fut.agenda.fut_agenda.repositories.QuadraRepository;
 
 @Service
