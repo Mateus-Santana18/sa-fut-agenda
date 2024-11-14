@@ -12,7 +12,7 @@ import jakarta.persistence.OneToOne;
 
 @Entity(name = "reserva")
 public class ReservaEntity {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -70,6 +70,10 @@ public class ReservaEntity {
     public void setOrganizadorEntity(OrganizadorEntity organizadorEntity) {
         this.organizadorEntity = organizadorEntity;
     }
-    
-    
+
+    public String getTipo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getTipo'");
+    }
+
 }

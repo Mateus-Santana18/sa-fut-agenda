@@ -11,7 +11,7 @@ public class EstabelecimentoDTO {
     private LocalDateTime horarioAbertura;
     private LocalDateTime horarioFechamento;
 
-    private UsuarioDTO usuarioDTO;
+    private long id_usuario;
     private List<QuadraDTO> quadraList;
 
     public long getId() {
@@ -54,20 +54,20 @@ public class EstabelecimentoDTO {
         this.horarioFechamento = horarioFechamento;
     }
 
-    public UsuarioDTO getUsuarioDTO() {
-        return usuarioDTO;
-    }
-
-    public void setUsuarioDTO(UsuarioDTO usuarioDTO) {
-        this.usuarioDTO = usuarioDTO;
-    }
-
     public List<QuadraDTO> getQuadraList() {
         return quadraList;
     }
 
     public void setQuadraList(List<QuadraDTO> quadraList) {
         this.quadraList = quadraList;
+    }
+
+    public long getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(long id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
 }

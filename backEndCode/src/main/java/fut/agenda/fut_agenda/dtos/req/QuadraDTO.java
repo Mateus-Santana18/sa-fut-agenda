@@ -4,6 +4,7 @@ public class QuadraDTO {
     
     private long id;
     private String tipo;
+    private long idEstabelecimento;
     
     public long getId() {
         return id;
@@ -16,6 +17,12 @@ public class QuadraDTO {
     }
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+    public long getIdEstabelecimento() {
+        return idEstabelecimento;
+    }
+    public void setIdEstabelecimento(long idEstabelecimento) {
+        this.idEstabelecimento = idEstabelecimento;
     }
 
     

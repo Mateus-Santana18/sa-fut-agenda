@@ -3,6 +3,7 @@ package fut.agenda.fut_agenda.dtos.res;
 public class ShowQuadraDTO {
     private long id;
     private String tipo;
+    private long idEstabelecimento;
     
     public long getId() {
         return id;
@@ -16,4 +17,11 @@ public class ShowQuadraDTO {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+    public long getIdEstabelecimento() {
+        return idEstabelecimento;
+    }
+    public void setIdEstabelecimento(long idEstabelecimento) {
+        this.idEstabelecimento = idEstabelecimento;
+    }
+    
 }
