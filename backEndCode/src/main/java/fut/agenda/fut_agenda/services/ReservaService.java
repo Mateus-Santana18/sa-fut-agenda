@@ -25,11 +25,8 @@ public class ReservaService {
     public void criarReserva(ReservaDTO dto) {
         ReservaEntity reservaEntity = new ReservaEntity();
 
-        
         reservaEntity.setHorarioInicioReserva(dto.getHorarioInicioReserva());
         reservaEntity.setHorarioFimReserva(dto.getHorarioFimReserva());
-
-        final ReservaEntity reservaEntityPersistance = reservaRepository.save(reservaEntity);
 
         QuadraEntity quadraEntity = new QuadraEntity();
         quadraEntity.setId(dto.getIdQuadra());
@@ -41,8 +38,7 @@ public class ReservaService {
 
         reservaEntity.setOrganizadorEntity(organizadoEntity);
 
-        reservaEntityPersistance.setQuadraEntity(quadraEntity);
-        reservaEntityPersistance.setOrganizadorEntity(organizadoEntity);
+        reservaRepository.save(reservaEntity);
     }
 
     public List<ShowReservaDTO> listarReservas() {
