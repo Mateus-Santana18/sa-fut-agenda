@@ -26,6 +26,7 @@ public class UsuarioService {
         usuarioEntity.setNome(dto.getNome());
         usuarioEntity.setEmail(dto.getEmail());
         usuarioEntity.setTelefone(dto.getTelefone());
+        usuarioEntity.setSenha(dto.getSenha());
 
         usuarioRepository.save(usuarioEntity);
 

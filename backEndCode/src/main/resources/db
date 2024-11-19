@@ -6,6 +6,32 @@ create table usuario (
 	"senha" varchar(30) not null
 );
 
+create table estabelecimento (
+	"id" serial primary key,
+	"endereco" varchar(40) not null,
+	"cnpj" varchar(16) not null,
+	"horario_abertura" timestamp not null,
+	"horario_encerramento" timestamp not null,
+	
+--					UM PRA UM
+	"id_usuario" integer references usuario(id)
+);
+create table quadra (
+	"id" serial primary key,
+	"tipo" varchar(20) not null,
+	
+--	 				MUITOS PRA UM
+	"id_estabelecimento" integer references estabelecimento(id)
+);
+
+create table organizador (
+	"id" serial primary key,
+	
+	--				UM PRA UM
+	"id_usuario" integer references usuario(id)
+);
+
+
 create table reserva (
 	"id" serial primary key,
 	"horario_inicio_reserva" timestamp not null,
@@ -19,31 +45,9 @@ create table reserva (
 
 );
 
-create table quadra (
-	"id" serial primary key,
-	"tipo" varchar(20) not null,
-	
---	 				MUITOS PRA UM
-	"id_estabelecimento" integer references estabelecimento(id)
-);
 
-create table estabelecimento (
-	"id" serial primary key,
-	"endereco" varchar(40) not null,
-	"cnpj" varchar(16) not null,
-	"horario_abertura" timestamp not null,
-	"horario_encerramento" timestamp not null,
-	
---					UM PRA UM
-	"id_usuario" integer references usuario(id)
-);
 
-create table organizador (
-	"id" serial primary key,
-	
-	--				UM PRA UM
-	"id_usuario" integer references usuario(id)
-);
+
 
 
 

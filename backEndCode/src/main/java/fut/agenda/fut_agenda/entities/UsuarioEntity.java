@@ -64,9 +64,5 @@ public class UsuarioEntity {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-
-
-    
     
 }
