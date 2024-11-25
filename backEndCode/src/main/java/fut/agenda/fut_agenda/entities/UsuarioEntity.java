@@ -1,29 +1,69 @@
 package fut.agenda.fut_agenda.entities;
 
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+@Table(name = "usuario")
 @Entity(name = "usuario")
-public class UsuarioEntity {
+public class UsuarioEntity implements UserDetails{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private long id;
 
-    @Column(name = "nome")
+    @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true, length = 100, nullable = false)
     private String email;
 
-    @Column(name = "telefone")
+    @Column(name = "telefone", nullable = false)
     private String telefone;
 
-    @Column(name = "senha")
+    @Column(name = "senha", nullable = false)
     private String senha;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_role")
+    private RoleEntity role;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled( ) {
+        return true;
+    }
 
     public long getId() {
         return id;
@@ -63,6 +103,14 @@ public class UsuarioEntity {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+    @Override
+    public String getPassword() {
+        return senha;
+    }
+    @Override
+    public String getUsername() {
+        return email;
     }
     
 }

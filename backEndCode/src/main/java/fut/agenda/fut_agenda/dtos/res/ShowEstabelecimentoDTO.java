@@ -3,6 +3,8 @@ package fut.agenda.fut_agenda.dtos.res;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import fut.agenda.fut_agenda.entities.UsuarioEntity;
+
 
 
 public class ShowEstabelecimentoDTO {
@@ -69,6 +71,11 @@ public class ShowEstabelecimentoDTO {
 
     public void setQuadraList(List<ShowQuadraDTO> quadraList) {
         this.quadraList = quadraList;
+    }
+
+    public void setShowUsuarioDTO(UsuarioEntity usuarioEntity) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setShowUsuarioDTO'");
     }
 
 
