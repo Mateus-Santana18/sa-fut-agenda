@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fut.agenda.fut_agenda.dtos.usuario.LoginResponse;
 import fut.agenda.fut_agenda.dtos.usuario.LoginUsuarioDTO;
-import fut.agenda.fut_agenda.dtos.reserva.RegisterUserDto;
+import fut.agenda.fut_agenda.dtos.reserva.RegisterUserDTO;
 import fut.agenda.fut_agenda.entities.UsuarioEntity;
 import fut.agenda.fut_agenda.services.AuthenticationService;
 import fut.agenda.fut_agenda.services.JwtService;
@@ -26,7 +26,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<UsuarioEntity> register(@RequestBody RegisterUserDto registerUserDto) {
+    public ResponseEntity<UsuarioEntity> register(@RequestBody RegisterUserDTO registerUserDto) {
         UsuarioEntity registeredUser = authenticationService.signup(registerUserDto);
 
         return ResponseEntity.ok(registeredUser);
