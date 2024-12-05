@@ -22,7 +22,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 public class SecurityConfiguration {
 
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
-  private final AuthEntryPoint unauthorizedHandler;
   private final String[] AUTH_WHITELIST = {
       "/auth/**",
   };
@@ -36,10 +35,6 @@ public class SecurityConfiguration {
         .authorizeHttpRequests(auth -> auth
             .requestMatchers(AUTH_WHITELIST).permitAll()
             .anyRequest().authenticated()
-        )
-        .exceptionHandling(exception ->
-            exception
-                .authenticationEntryPoint(unauthorizedHandler)
         )
         .csrf(AbstractHttpConfigurer::disable)
         .cors(cors -> cors.configurationSource(corsConfigurationSource()))
