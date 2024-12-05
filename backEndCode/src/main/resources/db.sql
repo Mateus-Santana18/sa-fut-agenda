@@ -26,7 +26,7 @@ create table quadra
 create table organizador
 (
     "id"         serial primary key,
-    "id_usuario" integer not null references usuario (id)
+    "id_usuario" integer not null
 );
 
 create table reserva
@@ -40,7 +40,7 @@ create table reserva
 create table reserva_usuario
 (
     "id"         serial primary key,
-    "id_usuario" integer not null references usuario (id),
+    "id_usuario" integer not null,
     "id_reserva" integer not null references reserva (id),
     "funcao"     text    not null
 );
