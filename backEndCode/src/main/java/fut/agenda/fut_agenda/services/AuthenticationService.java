@@ -5,8 +5,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import fut.agenda.fut_agenda.dtos.res.LoginUsuarioDTO;
-import fut.agenda.fut_agenda.dtos.res.RegisterUserDto;
+import fut.agenda.fut_agenda.dtos.usuario.LoginUsuarioDTO;
+import fut.agenda.fut_agenda.dtos.reserva.RegisterUserDto;
 import fut.agenda.fut_agenda.entities.UsuarioEntity;
 import fut.agenda.fut_agenda.repositories.UsuarioRepository;
 
@@ -33,6 +33,7 @@ public class AuthenticationService {
         user.setEmail(input.getEmail());
         user.setTelefone(input.getTelefone());
         user.setSenha(passwordEncoder.encode(input.getSenha()));
+        user.setCargo(input.getCargo());
 
         return userRepository.save(user);
     }

@@ -1,5 +1,7 @@
-package fut.agenda.fut_agenda.dtos.res;
+package fut.agenda.fut_agenda.dtos.usuario;
 
+import fut.agenda.fut_agenda.dtos.ShowOrganizadorDTO;
+import fut.agenda.fut_agenda.dtos.quadra.ShowQuadraDTO;
 import java.time.LocalDateTime;
 
 

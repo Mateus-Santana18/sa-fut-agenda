@@ -1,4 +1,6 @@
-package fut.agenda.fut_agenda.dtos.res;
+package fut.agenda.fut_agenda.dtos.quadra;
+
+import fut.agenda.fut_agenda.dtos.ShowEstabelecimentoDTO;
 
 public class ShowQuadraDTO {
     private long id;

@@ -1,21 +1,19 @@
-package fut.agenda.fut_agenda.dtos.res;
+package fut.agenda.fut_agenda.dtos;
 
+import fut.agenda.fut_agenda.dtos.quadra.QuadraDTO;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import fut.agenda.fut_agenda.entities.UsuarioEntity;
-
-
-
-public class ShowEstabelecimentoDTO {
+public class EstabelecimentoDTO {
+    
     private long id;
     private String endereco;
     private String cnpj;
     private LocalDateTime horarioAbertura;
     private LocalDateTime horarioFechamento;
 
-    private ShowUsuarioDTO showUsuarioDTO;
-    private List<ShowQuadraDTO> quadraList;
+    private long id_usuario;
+    private List<QuadraDTO> quadraList;
 
     public long getId() {
         return id;
@@ -57,27 +55,20 @@ public class ShowEstabelecimentoDTO {
         this.horarioFechamento = horarioFechamento;
     }
 
-    public ShowUsuarioDTO getShowUsuarioDTO() {
-        return showUsuarioDTO;
-    }
-
-    public void setShowUsuarioDTO(ShowUsuarioDTO showUsuarioDTO) {
-        this.showUsuarioDTO = showUsuarioDTO;
-    }
-
-    public List<ShowQuadraDTO> getQuadraList() {
+    public List<QuadraDTO> getQuadraList() {
         return quadraList;
     }
 
-    public void setQuadraList(List<ShowQuadraDTO> quadraList) {
+    public void setQuadraList(List<QuadraDTO> quadraList) {
         this.quadraList = quadraList;
     }
 
-    public void setShowUsuarioDTO(UsuarioEntity usuarioEntity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setShowUsuarioDTO'");
+    public long getId_usuario() {
+        return id_usuario;
     }
 
-
+    public void setId_usuario(long id_usuario) {
+        this.id_usuario = id_usuario;
+    }
 
 }

@@ -1,4 +1,4 @@
-package fut.agenda.fut_agenda.dtos.req;
+package fut.agenda.fut_agenda.dtos;
 
 public class OrganizadorDTO {
     private long id;

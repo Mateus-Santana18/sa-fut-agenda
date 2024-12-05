@@ -1,4 +1,6 @@
-package fut.agenda.fut_agenda.dtos.res;
+package fut.agenda.fut_agenda.dtos;
+
+import fut.agenda.fut_agenda.dtos.usuario.ShowUsuarioDTO;
 
 public class ShowOrganizadorDTO {
     private long id;

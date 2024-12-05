@@ -1,24 +1,31 @@
 package fut.agenda.fut_agenda.entities;
 
-import java.util.Collection;
-import java.util.List;
-
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.util.Collection;
+import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "usuario")
 @Entity(name = "usuario")
-public class UsuarioEntity implements UserDetails{
+public class UsuarioEntity implements UserDetails {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,9 +44,9 @@ public class UsuarioEntity implements UserDetails{
     @Column(name = "senha", nullable = false)
     private String senha;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_role")
-    private RoleEntity role;
+    @Column(name = "cargo")
+    @Enumerated(EnumType.STRING)
+    private Role cargo;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -63,46 +70,6 @@ public class UsuarioEntity implements UserDetails{
     @Override
     public boolean isEnabled( ) {
         return true;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
     @Override
     public String getPassword() {

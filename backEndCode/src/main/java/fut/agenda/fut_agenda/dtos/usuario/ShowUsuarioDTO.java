@@ -1,4 +1,4 @@
-package fut.agenda.fut_agenda.dtos.res;
+package fut.agenda.fut_agenda.dtos.usuario;
 
 public class ShowUsuarioDTO {
     private long id;

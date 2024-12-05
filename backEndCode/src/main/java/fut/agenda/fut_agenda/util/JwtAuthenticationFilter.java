@@ -1,4 +1,4 @@
-package fut.agenda.fut_agenda.dtos;
+package fut.agenda.fut_agenda.util;
 
 import java.io.IOException;
 

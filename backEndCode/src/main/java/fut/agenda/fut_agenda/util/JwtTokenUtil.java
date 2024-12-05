@@ -1,4 +1,4 @@
-package fut.agenda.fut_agenda;
+package fut.agenda.fut_agenda.util;
 
 import java.util.Date;
 

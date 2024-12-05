@@ -1,4 +1,4 @@
-package fut.agenda.fut_agenda.dtos.req;
+package fut.agenda.fut_agenda.dtos.quadra;
 
 public class QuadraDTO {
     
@@ -24,6 +24,4 @@ public class QuadraDTO {
     public void setIdEstabelecimento(long idEstabelecimento) {
         this.idEstabelecimento = idEstabelecimento;
     }
-
-    
 }

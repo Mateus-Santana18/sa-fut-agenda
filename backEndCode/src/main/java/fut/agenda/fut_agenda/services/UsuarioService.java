@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fut.agenda.fut_agenda.dtos.req.UsuarioDTO;
-import fut.agenda.fut_agenda.dtos.res.ShowUsuarioDTO;
+import fut.agenda.fut_agenda.dtos.usuario.UsuarioDTO;
+import fut.agenda.fut_agenda.dtos.usuario.ShowUsuarioDTO;
 import fut.agenda.fut_agenda.entities.UsuarioEntity;
 import fut.agenda.fut_agenda.repositories.UsuarioRepository;
 import jakarta.transaction.Transactional;
@@ -18,7 +18,7 @@ public class UsuarioService {
     @Autowired
     UsuarioRepository usuarioRepository;
 
-    public void criarUsuario (UsuarioDTO dto) {
+    public void criarUsuario(UsuarioDTO dto) {
 
         UsuarioEntity usuarioEntity = new UsuarioEntity();
         
@@ -32,7 +32,7 @@ public class UsuarioService {
 
     }
 
-    public List<ShowUsuarioDTO> listarUsuarios () {
+    public List<ShowUsuarioDTO> listarUsuarios() {
         List<UsuarioEntity> usuarioEntities = usuarioRepository.findAll();
 
         return usuarioEntities.stream().map(usuario -> {
