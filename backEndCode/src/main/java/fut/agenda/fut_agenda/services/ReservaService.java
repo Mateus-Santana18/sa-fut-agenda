@@ -67,7 +67,7 @@ public class ReservaService {
 
   public ReservaDTO addToReserva(Long reservaId, AddUsuarioReservaDTO addUsuarioReservaDTO) {
     ReservaEntity reservaEntity = reservaRepository.findById(reservaId).orElseThrow();
-    UsuarioEntity userForAdd = usuarioRepository.findById(addUsuarioReservaDTO.getUserId())
+    UsuarioEntity userForAdd = usuarioRepository.findByEmail(addUsuarioReservaDTO.getEmail())
         .orElseThrow();
     if (reservaEntity.getReservaUsuarioEntitySet().stream()
         .anyMatch(ru -> ru.getUsuarioEntity().getId() == userForAdd.getId())) {
@@ -110,10 +110,10 @@ public class ReservaService {
               .build();
         })
         .filter(e -> {
-          if (textQuery == null || textQuery.isEmpty()) {
+//          if (textQuery == null || textQuery.trim().isEmpty()) {
             return true;
-          }
-          return e.getUsuario().getEmail().contains(textQuery);
+//          }
+//          return e.getUsuario().getEmail().contains(textQuery);
         })
         .toList();
   }

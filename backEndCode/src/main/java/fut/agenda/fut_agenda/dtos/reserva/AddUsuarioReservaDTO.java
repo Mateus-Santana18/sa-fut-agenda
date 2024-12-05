@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Data
 public class AddUsuarioReservaDTO {
-  private Long userId;
+  private String email;
   private Funcao funcao;
 }
