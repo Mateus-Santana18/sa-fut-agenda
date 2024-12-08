@@ -1,106 +1,122 @@
 
----
 
-# Fut - Agenda ⚽
 
-**Fut - Agenda** é um sistema de gerenciamento de partidas de futebol, desenvolvido para facilitar a organização de jogos e o controle de agendamentos de campos. Com ele, campos e administradores podem gerenciar partidas, horários e pagamentos, enquanto usuários e organizadores podem reservar horários, ingressar em partidas e gerenciar seus perfis.
+# FUT AGENDA - Backend ⚽
+
+O **FUT AGENDA** é uma solução inovadora que automatiza o processo de aluguel de quadras de futebol, simplificando a experiência tanto para jogadores quanto para donos de quadras. Este repositório contém o código-fonte do backend, desenvolvido com **Java Spring** e integrado ao banco de dados **PostgreSQL**.
 
 ![borda preta](https://github.com/user-attachments/assets/d0dcc946-d5fd-4a4d-a200-828ac05ab066)
-
-
-## Tecnologias Utilizadas 🛠️
-- **Back-end:** Java (Spring Boot)
-- **Front-end:** React.js
-- **Banco de Dados:** PostgreSQL
-- **Outras tecnologias:** RESTful APIs, JWT para autenticação.
+---
 
 ## Funcionalidades Principais 🎯
-### Papéis e Responsabilidades
-- **Campo:**
-  - Criar, editar e excluir partidas.
-  - Editar valor dos aluguéis.
-  - Consultar informações de pagamento.
-  - Confirmar o aluguel da partida.
-  
-- **Admin:**
-  - Criar, editar e excluir partidas.
-  - Editar valor de aluguéis.
-  - Consultar informações de pagamento.
-  - Confirmar o aluguel de partidas.
-  - Excluir usuários.
-  - Criar usuários de campos.
 
-- **Usuário:**
-  - Ingressar em partidas.
-  - Editar e excluir perfil.
-  - Consultar partidas disponíveis.
-  - Enviar comprovante de pagamento.
+- **Cadastro e Gerenciamento de Usuários**: Criação, edição e exclusão de perfis.  
+- **Reserva de Quadras**: Agendamento rápido e intuitivo com visualização em tempo real da disponibilidade.  
+- **Gerenciamento de Grupos**: Adição e remoção de jogadores para facilitar a organização do time.  
+- **Notificações em Tempo Real**: Lembretes automáticos sobre reservas, cancelamentos e alterações.  
+- **Calendário Online**: Controle total das reservas através de um sistema de calendário.  
+- **Testes Automatizados**: Garantia de qualidade com cobertura de testes para as principais funcionalidades.  
 
-- **Organizador:**
-  - Gerenciar partidas.
-  - Ingressar em partidas.
-  - Editar e excluir perfil.
-  - Enviar comprovante de pagamento.
+---
 
-### Requisitos Funcionais 📋
-1. Criar, editar e excluir partidas.
-2. Exibir lista de horários disponíveis.
-3. Permitir aluguel de horários pelos usuários.
-4. Upload de comprovantes de pagamento.
-5. Cadastro e login de usuários.
-6. Confirmar aluguel do campo.
-7. Excluir e editar perfil e partidas (usuários e organizadores).
-8. Permitir que o admin gerencie usuários.
+## Tecnologias Utilizadas 🛠️
 
-### Requisitos Não Funcionais 🔧
-1. Resposta do sistema em até 2,5 segundos.
-2. Acesso dos campos a dados dos usuários.
+- **Java Spring Framework**: Criação e gerenciamento de APIs RESTful.  
+- **PostgreSQL**: Banco de dados relacional robusto para armazenamento e manipulação de dados.  
+- **Spring Data JPA**: Mapeamento objeto-relacional simplificado.  
+- **Spring Boot**: Configuração e inicialização rápida do projeto.  
+- **Spring Security**: Implementação de autenticação e autorização.  
+- **JUnit e Mockito**: Frameworks para testes unitários e de integração.  
 
-## Instalação 🚀
-### Backend
-1. Clone o repositório:
+---
+
+## Requisitos de Instalação 📋
+
+- **Java 17** ou superior.  
+- **Maven**: Para gerenciamento de dependências.  
+- **PostgreSQL**: Configurado localmente ou em um servidor remoto.  
+
+---
+
+## Configuração do Projeto 🚀
+
+1. Clone o repositório:  
    ```bash
-   git clone https://github.com/seu-usuario/fut-agenda.git
-   cd backend
+   git clone https://github.com/seu-usuario/fut-agenda-backend.git
+   cd fut-agenda-backend
    ```
-2. Configure o banco de dados PostgreSQL no `application.properties`:
+
+2. Configure o banco de dados no arquivo `application.properties`:  
    ```properties
    spring.datasource.url=jdbc:postgresql://localhost:5432/futagenda
    spring.datasource.username=seu-usuario
    spring.datasource.password=sua-senha
+   spring.jpa.hibernate.ddl-auto=update
    ```
 
-3. Compile e execute a aplicação Spring Boot:
+3. Compile e execute o projeto:  
    ```bash
-   mvn clean install
    mvn spring-boot:run
    ```
 
-### Frontend
-1. Navegue até o diretório do frontend:
+---
+
+## Executando os Testes
+
+Para garantir a qualidade do código, o projeto inclui testes automatizados para as principais funcionalidades.  
+
+1. Para executar os testes, use o seguinte comando:  
    ```bash
-   cd frontend
-   ```
+   mvn test
+   ```  
 
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
+2. Ferramentas utilizadas nos testes:  
+   - **JUnit 5**: Para testes unitários.  
+   - **Mockito**: Para mocks e simulação de dependências.  
 
-3. Inicie o servidor de desenvolvimento:
-   ```bash
-   npm start
-   ```
-
-## Contribuição 🤝
-Sinta-se à vontade para contribuir com melhorias e novas funcionalidades para o **Fut - Agenda**. Para isso, siga os passos:
-1. Faça um fork do projeto.
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`).
-3. Envie suas alterações (`git commit -am 'Adiciona nova feature'`).
-4. Faça o push para a branch (`git push origin feature/nova-feature`).
-5. Crie um pull request.
-
-## Licença 📄
-Este projeto está licenciado sob a [MIT License](LICENSE).
+Os relatórios de cobertura podem ser configurados com plugins como o **JaCoCo**.
 
 ---
+
+## Endpoints Disponíveis
+
+### Usuários  
+- `GET /usuarios`: Retorna a lista de usuários.  
+- `POST /usuarios`: Cria um novo usuário.  
+- `PUT /usuarios/{id}`: Atualiza as informações de um usuário.  
+- `DELETE /usuarios/{id}`: Remove um usuário.  
+
+### Reservas  
+- `GET /reservas`: Lista todas as reservas.  
+- `POST /reservas`: Cria uma nova reserva.  
+- `DELETE /reservas/{id}`: Cancela uma reserva existente.  
+
+---
+
+## Contribuição 🤝
+
+Contribuições são bem-vindas! Para colaborar:  
+
+1. Faça um fork do repositório.  
+2. Crie uma nova branch para a sua funcionalidade ou correção:  
+   ```bash
+   git checkout -b minha-feature
+   ```  
+3. Envie suas alterações:  
+   ```bash
+   git push origin minha-feature
+   ```  
+4. Abra um Pull Request detalhando as mudanças.  
+
+---
+
+## Autor
+
+O **FUT AGENDA** foi desenvolvido com foco em facilitar a organização de partidas de futebol e proporcionar uma experiência intuitiva para todos os usuários.
+
+---
+
+## Licença 📄
+
+Este projeto é licenciado sob a [MIT License](LICENSE).
+```
