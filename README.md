@@ -13,7 +13,6 @@ O **FUT AGENDA** é uma solução inovadora que automatiza o processo de aluguel
 - **Cadastro e Gerenciamento de Usuários**: Criação, edição e exclusão de perfis.  
 - **Reserva de Quadras**: Agendamento rápido e intuitivo com visualização em tempo real da disponibilidade.  
 - **Gerenciamento de Grupos**: Adição e remoção de jogadores para facilitar a organização do time.  
-- **Notificações em Tempo Real**: Lembretes automáticos sobre reservas, cancelamentos e alterações.  
 - **Calendário Online**: Controle total das reservas através de um sistema de calendário.  
 - **Testes Automatizados**: Garantia de qualidade com cobertura de testes para as principais funcionalidades.  
 
@@ -51,7 +50,6 @@ O **FUT AGENDA** é uma solução inovadora que automatiza o processo de aluguel
    spring.datasource.url=jdbc:postgresql://localhost:5432/futagenda
    spring.datasource.username=seu-usuario
    spring.datasource.password=sua-senha
-   spring.jpa.hibernate.ddl-auto=update
    ```
 
 3. Compile e execute o projeto:  
@@ -74,7 +72,6 @@ Para garantir a qualidade do código, o projeto inclui testes automatizados para
    - **JUnit 5**: Para testes unitários.  
    - **Mockito**: Para mocks e simulação de dependências.  
 
-Os relatórios de cobertura podem ser configurados com plugins como o **JaCoCo**.
 
 ---
 
