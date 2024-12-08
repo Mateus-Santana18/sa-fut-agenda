@@ -1,27 +1,23 @@
 package fut.agenda.fut_agenda.dtos.quadra;
 
+import fut.agenda.fut_agenda.entities.TipoQuadra;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class QuadraDTO {
     
     private long id;
-    private String tipo;
+    private String nome;
+    private TipoQuadra tipo;
     private long idEstabelecimento;
-    
-    public long getId() {
-        return id;
-    }
-    public void setId(long id) {
-        this.id = id;
-    }
-    public String getTipo() {
-        return tipo;
-    }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    public long getIdEstabelecimento() {
-        return idEstabelecimento;
-    }
-    public void setIdEstabelecimento(long idEstabelecimento) {
-        this.idEstabelecimento = idEstabelecimento;
-    }
 }

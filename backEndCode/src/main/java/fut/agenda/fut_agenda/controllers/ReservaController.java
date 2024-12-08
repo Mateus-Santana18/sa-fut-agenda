@@ -7,8 +7,11 @@ import fut.agenda.fut_agenda.dtos.reserva.SaveReservaDTO;
 import fut.agenda.fut_agenda.entities.ReservaEntity;
 import fut.agenda.fut_agenda.entities.ReservaUsuarioEntity;
 import fut.agenda.fut_agenda.services.ReservaService;
+import fut.agenda.fut_agenda.util.SecurityUtils;
 import java.util.Collection;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,9 +33,20 @@ public class ReservaController {
     return reservaService.addToReserva(reservaId, addUsuarioReservaDTO);
   }
 
+  @DeleteMapping("/add/{reservaId}/{email}")
+  public ResponseEntity<Void> removeWithEmail(@PathVariable Long reservaId, @PathVariable String email) {
+    reservaService.removeFromReserva(reservaId, email);
+    return ResponseEntity.ok().build();
+  }
+
   @PostMapping("/save")
   public ReservaDTO saveReserva(@RequestBody SaveReservaDTO saveReservaDTO) {
-    return reservaService.saveReserva(saveReservaDTO);
+    return reservaService.saveReserva(saveReservaDTO, SecurityUtils.getCurrentUser());
+  }
+
+  @DeleteMapping("{reservaId}")
+  public void deleteReserva(@PathVariable Long reservaId) {
+    reservaService.deleteReservaById(reservaId);
   }
 
   @GetMapping("/list-users/{reservaId}")

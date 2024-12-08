@@ -18,8 +18,10 @@ import fut.agenda.fut_agenda.util.SecurityUtils;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -31,7 +33,7 @@ public class ReservaService {
   private final QuadraRepository quadraRepository;
   private final UsuarioRepository usuarioRepository;
 
-  public ReservaDTO saveReserva(SaveReservaDTO saveReservaDTO) {
+  public ReservaDTO saveReserva(SaveReservaDTO saveReservaDTO, UsuarioEntity currentUser) {
     Long quadraId = saveReservaDTO.getQuadraId();
     String horario = saveReservaDTO.getHorario();
     Funcao funcao = saveReservaDTO.getFuncao();
@@ -43,10 +45,9 @@ public class ReservaService {
       throw new RuntimeException("Reserva já existe");
     }
 
-    UsuarioEntity usuarioEntity = SecurityUtils.getCurrentUser();
     OrganizadorEntity organizadorEntity = OrganizadorEntity
         .builder()
-        .usuarioEntity(usuarioEntity)
+        .usuarioEntity(currentUser)
         .build();
     ReservaEntity reserva = ReservaEntity
         .builder()
@@ -58,7 +59,7 @@ public class ReservaService {
     ReservaUsuarioEntity reservaUsuarioEntity = ReservaUsuarioEntity
         .builder()
         .reservaEntity(reserva)
-        .usuarioEntity(usuarioEntity)
+        .usuarioEntity(currentUser)
         .funcao(funcao)
         .build();
     reservaSaved.setReservaUsuarioEntitySet(new HashSet<>(Set.of(reservaUsuarioEntity)));
@@ -111,7 +112,7 @@ public class ReservaService {
         })
         .filter(e -> {
 //          if (textQuery == null || textQuery.trim().isEmpty()) {
-            return true;
+          return true;
 //          }
 //          return e.getUsuario().getEmail().contains(textQuery);
         })
@@ -133,5 +134,31 @@ public class ReservaService {
         .name(reservaEntity.getHorario())
         .id(reservaEntity.getId())
         .build();
+  }
+
+  public void deleteReservaById(Long reservaId) {
+    ReservaEntity reservaEntity = reservaRepository.findById(reservaId).orElseThrow();
+    UsuarioEntity currentUser = SecurityUtils.getCurrentUser();
+    UsuarioEntity organizadorEntity = reservaEntity.getOrganizadorEntity().getUsuarioEntity();
+
+    if (organizadorEntity.getId() == currentUser.getId()) {
+      reservaRepository.deleteById(reservaId);
+      return;
+    }
+    throw new RuntimeException("Não possui permissão para excluir reserva");
+  }
+
+  public void removeFromReserva(Long reservaId, String email) {
+    ReservaEntity reservaEntity = reservaRepository.findById(reservaId).orElseThrow();
+    UsuarioEntity currentUser = SecurityUtils.getCurrentUser();
+    UsuarioEntity organizadorEntity = reservaEntity.getOrganizadorEntity().getUsuarioEntity();
+    if (organizadorEntity.getId() == currentUser.getId()) {
+      reservaEntity.setReservaUsuarioEntitySet(reservaEntity.getReservaUsuarioEntitySet().stream()
+          .filter(e -> !Objects.equals(e.getUsuarioEntity().getEmail(), email)).collect(
+              Collectors.toSet()));
+      reservaRepository.save(reservaEntity);
+      return;
+    }
+    throw new RuntimeException("Não possui permissão para remover integrante da partidada");
   }
 }

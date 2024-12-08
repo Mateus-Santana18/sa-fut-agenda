@@ -32,7 +32,7 @@ public class ReservaEntity {
   private long id;
   @Column(name = "horario")
   private String horario;
-  @ManyToOne(cascade = CascadeType.ALL)
+  @ManyToOne
   @JoinColumn(name = "id_quadra")
   private QuadraEntity quadraEntity;
   @OneToOne(cascade = CascadeType.ALL)

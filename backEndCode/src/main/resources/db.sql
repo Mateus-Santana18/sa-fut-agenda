@@ -57,3 +57,9 @@ VALUES ('Quadra 2', 1);
 
 insert into quadra (nome, id_estabelecimento)
 VALUES ('Quadra 1', 1);
+
+CREATE EXTENSION if not exists pgcrypto;
+
+insert into usuario (nome, email, telefone, senha, cargo)
+SELECT 'Admin', 'admin@gmail.com', '(48) 99960-3951', crypt('1234', gen_salt('bf')), 'ADMIN'
+where not exists(select 1 from usuario where email = 'admin@gmail.com');

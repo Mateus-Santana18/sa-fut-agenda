@@ -24,6 +24,9 @@ public class SecurityConfiguration {
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
   private final String[] AUTH_WHITELIST = {
       "/auth/**",
+      "/v3/api-docs",
+      "/v3/api-docs/*",
+      "/swagger-ui/*"
   };
 
   @Bean

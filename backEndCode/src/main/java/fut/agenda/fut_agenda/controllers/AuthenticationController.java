@@ -28,10 +28,17 @@ public class AuthenticationController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<UsuarioEntity> register(@RequestBody RegisterUserDTO registerUserDto) {
+    public ResponseEntity<LoginResponse> register(@RequestBody RegisterUserDTO registerUserDto) {
         UsuarioEntity registeredUser = authenticationService.signup(registerUserDto);
 
-        return ResponseEntity.ok(registeredUser);
+        LoginResponse response = new LoginResponse();
+        response.setUserId(registeredUser.getId());
+        response.setNome(registeredUser.getNome());
+        response.setTelefone(registeredUser.getTelefone());
+        response.setEmail(registeredUser.getEmail());
+        response.setCargo(registeredUser.getCargo());
+
+        return ResponseEntity.ok(response);
     }
 
     @PutMapping
@@ -47,6 +54,7 @@ public class AuthenticationController {
         response.setNome(registeredUser.getNome());
         response.setTelefone(registeredUser.getTelefone());
         response.setEmail(registeredUser.getEmail());
+        response.setCargo(registeredUser.getCargo());
 
         return ResponseEntity.ok(response);
     }
@@ -69,6 +77,7 @@ public class AuthenticationController {
         response.setNome(authenticatedUser.getNome());
         response.setTelefone(authenticatedUser.getTelefone());
         response.setEmail(authenticatedUser.getEmail());
+        response.setCargo(authenticatedUser.getCargo());
 
         return ResponseEntity.ok(response);
     }

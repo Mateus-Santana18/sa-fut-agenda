@@ -2,6 +2,7 @@ package fut.agenda.fut_agenda.services;
 
 import fut.agenda.fut_agenda.dtos.reserva.RegisterUserDTO;
 import fut.agenda.fut_agenda.dtos.usuario.LoginUsuarioDTO;
+import fut.agenda.fut_agenda.entities.Role;
 import fut.agenda.fut_agenda.entities.UsuarioEntity;
 import fut.agenda.fut_agenda.repositories.UsuarioRepository;
 import fut.agenda.fut_agenda.util.SecurityUtils;
@@ -36,7 +37,7 @@ public class AuthenticationService {
     user.setEmail(input.getEmail());
     user.setTelefone(input.getTelefone());
     user.setSenha(passwordEncoder.encode(input.getSenha()));
-    user.setCargo(input.getCargo());
+    user.setCargo(Role.USER);
 
     return userRepository.save(user);
   }
@@ -61,9 +62,6 @@ public class AuthenticationService {
     }
     if (input.getEmail() != null && !currentUser.getEmail().equals(input.getEmail())) {
       currentUser.setEmail(input.getEmail());
-    }
-    if (input.getCargo() != null && !currentUser.getCargo().equals(input.getCargo())) {
-      currentUser.setCargo(input.getCargo());
     }
     if (input.getTelefone() != null && !currentUser.getTelefone().equals(input.getTelefone())) {
       currentUser.setTelefone(input.getTelefone());

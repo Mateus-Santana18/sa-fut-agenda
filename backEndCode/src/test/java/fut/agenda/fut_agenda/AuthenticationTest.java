@@ -104,7 +104,6 @@ public class AuthenticationTest {
         .email(email)
         .senha(new BCryptPasswordEncoder().encode("123")) // Codifica a senha
         .telefone("48991406974")
-        .cargo(Role.USER)
         .build();
 
     // Configura campos privados no serviço de autenticação
@@ -142,7 +141,6 @@ public class AuthenticationTest {
         .email(email)
         .senha(new BCryptPasswordEncoder().encode("123"))
         .telefone("48991406974")
-        .cargo(Role.USER)
         .build();
 
     // Configura campos privados no serviço de autenticação
