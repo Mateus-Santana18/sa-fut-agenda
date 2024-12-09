@@ -18,7 +18,8 @@ create table estabelecimento
 create table quadra
 (
     "id"                 serial primary key,
-    nome                 text    not null,
+    nome                 text not null,
+    tipo                 text not null,
 --	 				MUITOS PRA UM
     "id_estabelecimento" integer not null references estabelecimento (id)
 );
@@ -40,23 +41,14 @@ create table reserva
 create table reserva_usuario
 (
     "id"         serial primary key,
-    "id_usuario" integer not null,
-    "id_reserva" integer not null references reserva (id),
+    "id_usuario" integer,
+    "id_reserva" integer references reserva (id),
     "funcao"     text    not null
 );
 
 insert into estabelecimento (endereco, cnpj)
 VALUES ('Marlene', '86376783000128')
 returning id;
-
-insert into quadra (nome, id_estabelecimento)
-VALUES ('Quadra 3', 1);
-
-insert into quadra (nome, id_estabelecimento)
-VALUES ('Quadra 2', 1);
-
-insert into quadra (nome, id_estabelecimento)
-VALUES ('Quadra 1', 1);
 
 CREATE EXTENSION if not exists pgcrypto;
 
