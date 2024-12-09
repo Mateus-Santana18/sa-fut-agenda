@@ -47,7 +47,7 @@ create table reserva_usuario
 );
 
 insert into estabelecimento (endereco, cnpj)
-VALUES ('Marlene', '86376783000128')
+VALUES ('SC-401, 300', '86376783000128')
 returning id;
 
 CREATE EXTENSION if not exists pgcrypto;

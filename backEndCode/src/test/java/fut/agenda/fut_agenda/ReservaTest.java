@@ -2,23 +2,12 @@ package fut.agenda.fut_agenda;
 
 import static org.mockito.Mockito.when;
 
-import fut.agenda.fut_agenda.dtos.reserva.AddUsuarioReservaDTO;
-import fut.agenda.fut_agenda.dtos.reserva.ReservaUsuarioDTO;
-import fut.agenda.fut_agenda.dtos.reserva.SaveReservaDTO;
-import fut.agenda.fut_agenda.entities.EstabelecimentoEntity;
-import fut.agenda.fut_agenda.entities.Funcao;
-import fut.agenda.fut_agenda.entities.QuadraEntity;
-import fut.agenda.fut_agenda.entities.ReservaEntity;
-import fut.agenda.fut_agenda.entities.Role;
-import fut.agenda.fut_agenda.entities.TipoQuadra;
-import fut.agenda.fut_agenda.entities.UsuarioEntity;
-import fut.agenda.fut_agenda.repositories.QuadraRepository;
-import fut.agenda.fut_agenda.repositories.ReservaRepository;
-import fut.agenda.fut_agenda.repositories.UsuarioRepository;
-import fut.agenda.fut_agenda.services.ReservaService;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+
+import javax.management.relation.Role;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,11 +16,23 @@ import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.util.ReflectionTestUtils;
+
+import fut.agenda.fut_agenda.dtos.reserva.AddUsuarioReservaDTO;
+import fut.agenda.fut_agenda.dtos.reserva.SaveReservaDTO;
+import fut.agenda.fut_agenda.entities.EstabelecimentoEntity;
+import fut.agenda.fut_agenda.entities.Funcao;
+import fut.agenda.fut_agenda.entities.QuadraEntity;
+import fut.agenda.fut_agenda.entities.ReservaEntity;
+import fut.agenda.fut_agenda.entities.TipoQuadra;
+import fut.agenda.fut_agenda.entities.UsuarioEntity;
+import fut.agenda.fut_agenda.repositories.QuadraRepository;
+import fut.agenda.fut_agenda.repositories.ReservaRepository;
+import fut.agenda.fut_agenda.repositories.UsuarioRepository;
+import fut.agenda.fut_agenda.services.ReservaService;
 
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest
@@ -95,7 +96,7 @@ public class ReservaTest {
         .nome("usuario")
         .senha(new BCryptPasswordEncoder().encode("123"))
         .telefone("48991406974")
-        .cargo(Role.USER)
+        .cargo(fut.agenda.fut_agenda.entities.Role.USER)
         .build();
 
     ReflectionTestUtils.setField(reservaService, "reservaRepository", reservaRepository);
@@ -145,7 +146,7 @@ public class ReservaTest {
         .nome("usuario")
         .senha(new BCryptPasswordEncoder().encode("123"))
         .telefone("48991406974")
-        .cargo(Role.USER)
+        .cargo(fut.agenda.fut_agenda.entities.Role.USER)
         .build();
 
     Mockito.lenient().when(usuarioRepository.findByEmail(ArgumentMatchers.any()))
